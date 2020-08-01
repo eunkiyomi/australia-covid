@@ -1,9 +1,13 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const { getCases } = require('../datas/gather')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.json( { key: "value" } )
+    getCases()
+        .then(resource => {
+            res.json(json);
+        });
 });
 
 module.exports = router;
